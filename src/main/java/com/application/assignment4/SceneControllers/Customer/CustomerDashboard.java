@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Customer_dashboard_controller {
+public class CustomerDashboard {
 
     Customer customer;
 
@@ -42,7 +42,7 @@ public class Customer_dashboard_controller {
 
 
     public void logout(MouseEvent mouseEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Scenes/SelectUser.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/application/assignment4/Scenes/SelectUser.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 600, 450);
 
@@ -53,11 +53,11 @@ public class Customer_dashboard_controller {
     }
 
     public void CustomerMenu(MouseEvent mouseEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Scenes/CustomerItemTable.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/application/assignment4/Scenes/Customer/CustomerItemTable.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 750, 500);
 
-        Customer_dashboard_menu_controller controller = fxmlLoader.getController();
+        CustomerItemTable controller = fxmlLoader.getController();
         controller.setStage(stage);
         controller.setCustomer(customer);
 
@@ -65,11 +65,11 @@ public class Customer_dashboard_controller {
     }
 
     public void CustomerCart(MouseEvent mouseEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Scenes/CustomerCartOperations.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/application/assignment4/Scenes/Customer/CustomerCartOperations.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 750, 500);
 
-        Customer_dashboard_cart_controller controller = fxmlLoader.getController();
+        CustomerCartOperations controller = fxmlLoader.getController();
         controller.setStage(stage);
         controller.setCustomer(customer);
 
@@ -77,11 +77,11 @@ public class Customer_dashboard_controller {
     }
 
     public void CustomerOrder(MouseEvent mouseEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Scenes/CustomerOrderOperations.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/application/assignment4/Scenes/Customer/CustomerOrderOperations.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 750, 500);
 
-        Customer_dashboard_order_controller controller = fxmlLoader.getController();
+        CustomerOrderOperations controller = fxmlLoader.getController();
         controller.setStage(stage);
         controller.setCustomer(customer);
 
@@ -89,11 +89,11 @@ public class Customer_dashboard_controller {
     }
 
     public void CustomerReview(MouseEvent mouseEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Scenes/CustomerReviewOperations.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/application/assignment4/Scenes/Customer/CustomerReviewOperations.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 750, 500);
 
-        Customer_dashboard_review_controller controller = fxmlLoader.getController();
+        CustomerReviewOperations controller = fxmlLoader.getController();
         controller.setStage(stage);
         controller.setCustomer(customer);
 

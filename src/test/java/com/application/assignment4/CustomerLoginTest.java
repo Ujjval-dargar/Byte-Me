@@ -1,36 +1,57 @@
 package com.application.assignment4;
 
-import com.application.assignment4.Admin.Admin;
-import static org.junit.jupiter.api.Assertions.*;
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
-
+import com.application.assignment4.Customer.Customer;
+import org.junit.Before;
 import org.junit.Test;
 
-public class AdminLoginTest {
+import java.io.OutputStream;
+import java.io.PrintStream;
+
+import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class CustomerLoginTest {
+
+    @Before
+    public void setUp() throws Exception {
+
+        PrintStream originalOut = System.out;
+
+        System.setOut(new PrintStream(OutputStream.nullOutputStream()));
+
+        String name = "customer1";
+        String email = "cust1";
+        String password = "password";
+
+        Customer.signup(name, email, password);
+
+        System.setOut(originalOut);
+    }
 
     @Test
-    public void WrongUsername() throws Exception {
+    public void WrongEmail() throws Exception {
 
-        String username = "WrongUsername";
-        String password = "Admin@123";
+        String email = "WrongEmail";
+        String password = "password";
 
         String output = tapSystemOut(() -> {
-            int result = Admin.login(username, password);
+            int result = Customer.login(email, password);
 
             assertEquals(-1, result);
         });
 
-        assertTrue(output.contains("Wrong Username..."));
+        assertTrue(output.contains("No such email id found... Please Sign Up first."));
     }
 
     @Test
     public void WrongPassword() throws Exception {
 
-        String username = "Admin";
+        String email = "cust1";
         String password = "wrongPassword";
 
         String output = tapSystemOut(() -> {
-            int result = Admin.login(username, password);
+            int result = Customer.login(email, password);
 
             assertEquals(-1, result);
         });
@@ -41,11 +62,11 @@ public class AdminLoginTest {
     @Test
     public void CorrectLogin() throws Exception {
 
-        String username = "Admin";
-        String password = "Admin@123";
+        String email = "cust1";
+        String password = "password";
 
         String output = tapSystemOut(() -> {
-            int result = Admin.login(username, password);
+            int result = Customer.login(email, password);
 
             assertEquals(1, result);
         });

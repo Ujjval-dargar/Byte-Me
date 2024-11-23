@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import java.util.Scanner;
 
-public class CustomerTest {
+public class ItemOrderingTest {
 
     Item NotAvailableItem;
     Item AvailableItem;
@@ -72,10 +72,6 @@ public class CustomerTest {
 
         assertTrue(output.contains("Successfully Added to Cart."));
     }
-
-
-
-
 
 
 }

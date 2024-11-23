@@ -10,4 +10,10 @@ module com.application.assignment4 {
 
     opens com.application.assignment4 to javafx.fxml;
     exports com.application.assignment4;
+    exports com.application.assignment4.SceneControllers.Admin;
+    opens com.application.assignment4.SceneControllers.Admin to javafx.fxml;
+    exports com.application.assignment4.SceneControllers.Customer;
+    opens com.application.assignment4.SceneControllers.Customer to javafx.fxml;
+    exports com.application.assignment4.SceneControllers;
+    opens com.application.assignment4.SceneControllers to javafx.fxml;
 }

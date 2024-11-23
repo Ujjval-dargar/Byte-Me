@@ -1,7 +1,7 @@
 package com.application.assignment4.SceneControllers.Admin;
 
 import com.application.assignment4.Admin.Admin;
-import com.application.assignment4.SceneControllers.Select_User_controller;
+import com.application.assignment4.SceneControllers.SelectUser;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Admin_dashboard_order_controller {
+public class AdminOrderOperations {
 
     private Stage stage;
     Admin admin;
@@ -40,11 +40,11 @@ public class Admin_dashboard_order_controller {
     }
 
     public void logout(MouseEvent mouseEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Scenes/SelectUser.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/application/assignment4/Scenes/SelectUser.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 600, 450);
 
-        Select_User_controller controller = fxmlLoader.getController();
+        SelectUser controller = fxmlLoader.getController();
         controller.setStage(stage);
 
         stage.setScene(scene);
@@ -52,11 +52,11 @@ public class Admin_dashboard_order_controller {
 
     public void AdminMenu(MouseEvent mouseEvent) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Scenes/AdminMenuOperations.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/application/assignment4/Scenes/Admin/AdminMenuOperations.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 750, 500);
 
-        Admin_dashboard_menu_controller controller = fxmlLoader.getController();
+        AdminMenuOperations controller = fxmlLoader.getController();
         controller.setStage(stage);
         controller.setAdmin(admin);
 
@@ -65,11 +65,11 @@ public class Admin_dashboard_order_controller {
 
     public void AdminOrder(MouseEvent mouseEvent) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Scenes/AdminOrderOperations.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/application/assignment4/Scenes/Admin/AdminOrderOperations.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 750, 500);
 
-        Admin_dashboard_order_controller controller = fxmlLoader.getController();
+        AdminOrderOperations controller = fxmlLoader.getController();
         controller.setStage(stage);
         controller.setAdmin(admin);
 
@@ -77,11 +77,11 @@ public class Admin_dashboard_order_controller {
     }
 
     public void AdminPendingOrders(MouseEvent mouseEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Scenes/AdminPendingOrders.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/application/assignment4/Scenes/Admin/AdminPendingOrders.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 750, 500);
 
-        Admin_pending_order_controller controller = fxmlLoader.getController();
+        AdminPendingOrders controller = fxmlLoader.getController();
         controller.setStage(stage);
         controller.setAdmin(admin);
 

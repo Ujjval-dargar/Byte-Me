@@ -1,7 +1,7 @@
 package com.application.assignment4.SceneControllers;
 
-import com.application.assignment4.SceneControllers.Admin.Admin_login_controller;
-import com.application.assignment4.SceneControllers.Customer.Customer_login_controller;
+import com.application.assignment4.SceneControllers.Admin.AdminLogin;
+import com.application.assignment4.SceneControllers.Customer.CustomerLogin;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Select_User_controller {
+public class SelectUser {
 
     private Stage stage;
 
@@ -19,11 +19,11 @@ public class Select_User_controller {
 
     @FXML
     public void Change_CustomerLogin() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Scenes/CustomerLogin.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/application/assignment4/Scenes/Customer/CustomerLogin.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 600, 450);
 
-        Customer_login_controller controller = fxmlLoader.getController();
+        CustomerLogin controller = fxmlLoader.getController();
         controller.setStage(stage);
 
         stage.setScene(scene);
@@ -31,11 +31,11 @@ public class Select_User_controller {
 
     @FXML
     public void Change_AdminLogin() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Scenes/AdminLogin.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/application/assignment4/Scenes/Admin/AdminLogin.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 600, 450);
 
-        Admin_login_controller controller = fxmlLoader.getController();
+        AdminLogin controller = fxmlLoader.getController();
         controller.setStage(stage);
 
         stage.setScene(scene);

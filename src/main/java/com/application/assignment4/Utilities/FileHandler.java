@@ -1,4 +1,4 @@
-package com.application.assignment4.Portal;
+package com.application.assignment4.Utilities;
 
 import com.application.assignment4.Customer.Customer;
 import com.application.assignment4.Item.Item;
