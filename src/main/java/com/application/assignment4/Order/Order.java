@@ -113,6 +113,7 @@ public class Order extends Application implements Serializable {
         return specialRequest_property;
     }
 
+
     private void writeObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();
 

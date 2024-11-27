@@ -14,6 +14,7 @@ import com.application.assignment4.SceneControllers.SelectUser;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.TreeMap;
 
 import static com.application.assignment4.Utilities.TextFormat.textCenter;

@@ -82,7 +82,7 @@ public class CustomerOrderTable {
         if (selectedOrder==null){
             return;
         }
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/application/assignment4/Scenes/CustomerOrderDetails.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/application/assignment4/Scenes/Customer/CustomerOrderDetails.fxml"));
 
         Scene scene;
         try {
